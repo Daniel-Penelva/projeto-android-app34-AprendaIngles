@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Remove a sombra do ActionBar
+        getSupportActionBar().setElevation(0);
+
         smartTabLayout = findViewById(R.id.smartTabLayout);
         viewPager = findViewById(R.id.viewPager);
 
@@ -70,4 +73,6 @@ public class MainActivity extends AppCompatActivity {
 * 9º Configurando o adapter na viewPager.
 *
 * 10º Configurando a viewPager no smartTabLayout.
+*
+* 11º Customizando os componentes do layout e as cores.
 * */
