@@ -37,6 +37,9 @@ public class NumerosFragment extends Fragment {
         buttonCinco = view.findViewById(R.id.buttonCinco);
         buttonSeis = view.findViewById(R.id.buttonSeis);
 
+        // Criando os eventos de click no ButtonImage
+
+
         return view;
     }
 
