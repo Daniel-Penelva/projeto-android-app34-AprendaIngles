@@ -107,6 +107,18 @@ public class BichosFragment extends Fragment implements View.OnClickListener{
             });
         }
     }
+
+
+    // Vamos utilizar o onDestroy que é para quando o nosso Fragment for destruido.
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if(mediaPlayer != null){
+            mediaPlayer.release(); // para liberar o espaço de memória dos recursos utilizados para gerar o som.
+            mediaPlayer = null; // para liberar os recursos de memória do próprio objeto mediaPlayer.
+        }
+    }
 }
 
 
