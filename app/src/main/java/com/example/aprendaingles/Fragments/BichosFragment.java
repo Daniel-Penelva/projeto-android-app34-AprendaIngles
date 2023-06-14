@@ -39,6 +39,11 @@ public class BichosFragment extends Fragment implements View.OnClickListener{
 
         // Criando os eventos de click no ButtonImage
         buttonCao.setOnClickListener(this);
+        buttonGato.setOnClickListener(this);
+        buttonLeao.setOnClickListener(this);
+        buttonMacaco.setOnClickListener(this);
+        buttonOvelha.setOnClickListener(this);
+        buttonVaca.setOnClickListener(this);
 
         return view;
     }
@@ -48,6 +53,7 @@ public class BichosFragment extends Fragment implements View.OnClickListener{
         Log.i("Elemento clicado", "item" + v.getId());
     }
 }
+
 
 /* Anotação:
 * Como são muitos eventos de click é preferível implementar a Classe OnClickListener, essa interface
