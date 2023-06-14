@@ -8,17 +8,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.aprendaingles.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class NumerosFragment extends Fragment {
+
+    private ImageButton buttonUm, buttonDois, buttonTres, buttonQuatro, buttonCinco, buttonSeis;
 
 
     public NumerosFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -26,7 +27,17 @@ public class NumerosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_numeros, container, false);
+        View view = inflater.inflate(R.layout.fragment_numeros, container, false);
+
+        // Acessando os componentes ButtonImage
+        buttonUm = view.findViewById(R.id.buttonUm);
+        buttonDois = view.findViewById(R.id.buttonDois);
+        buttonTres = view.findViewById(R.id.buttonTres);
+        buttonQuatro = view.findViewById(R.id.buttonQuatro);
+        buttonCinco = view.findViewById(R.id.buttonCinco);
+        buttonSeis = view.findViewById(R.id.buttonSeis);
+
+        return view;
     }
 
 }

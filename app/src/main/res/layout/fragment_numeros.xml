@@ -9,7 +9,7 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton29"
+        android:id="@+id/buttonSeis"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="16dp"
@@ -17,10 +17,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/seis"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton27" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonQuatro" />
 
     <ImageButton
-        android:id="@+id/imageButton28"
+        android:id="@+id/buttonCinco"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="16dp"
@@ -28,10 +28,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/cinco"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton26" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTres" />
 
     <ImageButton
-        android:id="@+id/imageButton27"
+        android:id="@+id/buttonQuatro"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="16dp"
@@ -39,10 +39,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/quatro"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton25" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonDois" />
 
     <ImageButton
-        android:id="@+id/imageButton26"
+        android:id="@+id/buttonTres"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="16dp"
@@ -50,10 +50,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/tres"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton19" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonUm" />
 
     <ImageButton
-        android:id="@+id/imageButton25"
+        android:id="@+id/buttonDois"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="24dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton19"
+        android:id="@+id/buttonUm"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="24dp"
