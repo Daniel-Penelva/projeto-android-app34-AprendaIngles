@@ -1,6 +1,7 @@
 package com.example.aprendaingles.Fragments;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ public class NumerosFragment extends Fragment implements View.OnClickListener{
 
     private ImageButton buttonUm, buttonDois, buttonTres, buttonQuatro, buttonCinco, buttonSeis;
 
+    private MediaPlayer mediaPlayer;
 
     public NumerosFragment() {
 
@@ -46,12 +48,59 @@ public class NumerosFragment extends Fragment implements View.OnClickListener{
         buttonCinco.setOnClickListener(this);
         buttonSeis.setOnClickListener(this);
 
-
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        Log.i("Elemento clicado", "item" + v.getId());
+        //Log.i("Elemento clicado", "item" + v.getId());
+
+        switch (v.getId()){
+            case R.id.buttonUm :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.one);
+                tocarSom();
+                break;
+
+            case R.id.buttonDois :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.two);
+                tocarSom();
+                break;
+
+            case R.id.buttonTres :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.three);
+                tocarSom();
+                break;
+
+            case R.id.buttonQuatro :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.four);
+                tocarSom();
+                break;
+
+            case R.id.buttonCinco :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.five);
+                tocarSom();
+                break;
+
+            case R.id.buttonSeis :
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.six);
+                tocarSom();
+                break;
+        }
+    }
+
+    // Método para tocar o som
+    public void tocarSom(){
+        if(mediaPlayer != null){
+            mediaPlayer.start();
+
+            // Permite adicionar um evento quando a música finalizar
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+
+                    mediaPlayer.release(); // para liberar os recursos utilizados ao ser finalizado o som.
+                }
+            });
+        }
     }
 }

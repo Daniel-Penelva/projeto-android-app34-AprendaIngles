@@ -1,6 +1,7 @@
 package com.example.aprendaingles.Fragments;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,8 @@ import com.example.aprendaingles.R;
 public class BichosFragment extends Fragment implements View.OnClickListener{
 
     private ImageButton buttonCao, buttonGato, buttonLeao, buttonMacaco, buttonOvelha, buttonVaca;
+
+    private MediaPlayer mediaPlayer;
 
 
     public BichosFragment() {
@@ -50,7 +53,59 @@ public class BichosFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Log.i("Elemento clicado", "item" + v.getId());
+        //Log.i("Elemento clicado", "item" + v.getId());
+
+        //Criando as ações através do case do Switch para cada um dos botões que você quer testar
+        switch (v.getId()){
+            case R.id.buttonCao:
+
+                // Vale ressaltar que não vamos passar o contexto do fragmento, mas sim o contexto da nossa activity
+                //Ou seja, a nosso fragment_bicho está dentro da nossa MainActivity, logo é ele que iremos passar.
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.dog);
+                tocarSom();
+                break;
+
+            case R.id.buttonGato:
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.cat);
+                tocarSom();
+                break;
+
+            case R.id.buttonLeao:
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.lion);
+                tocarSom();
+                break;
+
+            case R.id.buttonMacaco:
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.monkey);
+                tocarSom();
+                break;
+
+            case R.id.buttonOvelha:
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.sheep);
+                tocarSom();
+                break;
+
+            case R.id.buttonVaca:
+                mediaPlayer = MediaPlayer.create(getActivity(),R.raw.cow);
+                tocarSom();
+                break;
+        }
+    }
+
+    // Método para tocar o som
+    public void tocarSom(){
+        if(mediaPlayer != null){
+            mediaPlayer.start();
+
+            // Permite adicionar um evento quando a música finalizar
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+
+                    mediaPlayer.release(); // para liberar os recursos utilizados ao ser finalizado o som.
+                }
+            });
+        }
     }
 }
 
